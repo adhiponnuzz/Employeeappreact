@@ -1,62 +1,105 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from './Navbar'
+
 const Empregister = () => {
+      var[empid,setEmpid]=useState("")
+      var[empdesg,setEmpdesg]=useState("")
+      var[empname,setEmpname]=useState("")
+      var[empsal,setEmpsal]=useState("")
+      var[cmpname,setcmpname]=useState("")
+      var[empmail,setEmpmail]=useState("")
+      var[empdob,setEmpdob]=useState("")
+      const[list,setlist]=useState([])
+      
+const ins=()=>{
+    
+      const data={empid,empdesg,empname,empsal,cmpname,empmail,empdob}
+    setlist((ls)=>[...ls,data])
+    
+}
   return (
-    <div>
-        <Navbar/>
+ 
+          
 
-<div className="container">
-    <div className="row">
-        <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-
-            <div className="row g-3">
-                <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                    <label for="" className="form-label">Employee Id</label>
-                    <input placeholder="Enter Id" type="text" className="form-control"/>
+    
+    <div> <Navbar/><div class="container">
+<form>    <div class="row">
+          <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <div class="row g-3">
+                      <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                            <label for="" class="form-label"><b>Employee id</b></label>
+                            <input type="number"  class="form-control" onChange={(e)=>{setEmpid(e.target.value)}}/>
+                      </div>
+                      <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                        <label for="" class="form-label"><b>Employee name</b></label>
+                        <input type="text" class="form-control"onChange={(e)=>{setEmpname(e.target.value)}}/>
+                      </div>
+                      <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                        <label for="" class="form-label"><b>Designation</b></label>
+                        <input type="text" class="form-control"onChange={(e)=>{setEmpdesg(e.target.value)}}/>
+                      </div>
+                      <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                        <label for="" class="form-label"><b>salary</b></label>
+                        <input type="number" class="form-control"onChange={(e)=>{setEmpsal(e.target.value)}}/>
+                      </div>
+                      <div class="col col-12 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
+                        <label for="" class="form-label"><b>Company Name</b></label>
+                        <input type="text" class="form-control"onChange={(e)=>{setcmpname(e.target.value)}}/>
+                      </div>
+                      <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                        <label for="" class="form-label"><b>dob</b></label>
+                        <input type="date" class="form-control"onChange={(e)=>{setEmpdob(e.target.value)}}/>
+                      </div>
+                      <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                        <label for="" class="form-label"><b>email</b></label>
+                        <input type="text" class="form-control"onChange={(e)=>{setEmpmail(e.target.value)}}/>
+                      </div>
+                      <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                            <button  class="btn btn-dark" type='reset'>clear</button>
+                      </div>
+                      <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                        <input type="button" value="register" class="btn btn-dark" onClick={ins}/>
+                      </div>
                 </div>
-                <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                    <label for="" className="form-label">Name</label>
-                    <input placeholder="Enter Name" type="text" className="form-control"/>
-                </div>
-                <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                    <label for="" className="form-label">Designation</label>
-                    <input placeholder="Enter Designation" type="text" className="form-control"/>
-                </div>
-                <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                    <label for="" className="form-label">Salary</label>
-                    <input placeholder="Enter Salary" type="text" className="form-control"/>
-                </div>
-                <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                    <label for="" className="form-label">Company Name</label>
-                    <input placeholder="Enter company name" type="text" className="form-control"/>
-                </div>
-                <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                    <label for="" className="form-label">Dob</label>
-                    <input placeholder="Enter dob" type="text" className="form-control"/>
-                </div>
-                <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                    <label for="" className="form-label">Email</label>
-                    <input placeholder="Enter email" type="text" className="form-control"/>
-                </div>
-                <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                    <button className="btn btn-success">Clear</button>
-                </div>
-                <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 ">
-                    <button className="btn btn-success">Register</button>
-                </div>
-            </div>
+          </div>
+    </div></form>
 
 
+    <table class="table">
+  <thead>
+    <tr>
+     
+      <th scope="col">empid</th>
+      <th scope="col">emp name</th>
+      <th scope="col">designation</th>
+      <th scope="col">salary</th>
+      <th scope="col">company name</th>
+      <th scope="col">dob</th>
+      <th scope="col">email</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+   
+  {
+list.map((value,key)=>
+<tr>
 
-        </div>
-    </div>
-</div>
+<td>{value.empid}</td>
+<td>{value.empname}</td>
+<td>{value.empdesg}</td>
+<td>{value.empsal}</td>
+<td>{value.cmpname}</td>
+<td>{value.empdob}</td>
+<td>{value.empmail}</td>
+</tr>
+)
 
-
-
-
-
-    </div>
+}
+   
+  </tbody>
+</table>
+</div>  </div>
   )
 }
 
