@@ -6,7 +6,26 @@ function App() {
 
     <>
     
+    <BrowserRouter>
+    <Routes>
+
+      <Route path="/" exact element={<Empregister/>}/>
+      <Route path="/search" exact element={<Search/>}/>
+      <Route path="/view" exact element={<View/>}/>
+
+      
+
+
+
+
+    </Routes>
     
+    
+    
+    
+    
+    
+    </BrowserRouter>
     
     </>
 
