@@ -65,40 +65,7 @@ const ins=()=>{
     </div></form>
 
 
-    <table class="table">
-  <thead>
-    <tr>
-     
-      <th scope="col">empid</th>
-      <th scope="col">emp name</th>
-      <th scope="col">designation</th>
-      <th scope="col">salary</th>
-      <th scope="col">company name</th>
-      <th scope="col">dob</th>
-      <th scope="col">email</th>
-      
-    </tr>
-  </thead>
-  <tbody>
-   
-  {
-list.map((value,key)=>
-<tr>
-
-<td>{value.empid}</td>
-<td>{value.empname}</td>
-<td>{value.empdesg}</td>
-<td>{value.empsal}</td>
-<td>{value.cmpname}</td>
-<td>{value.empdob}</td>
-<td>{value.empmail}</td>
-</tr>
-)
-
-}
-   
-  </tbody>
-</table>
+    
 </div>  </div>
   )
 }
